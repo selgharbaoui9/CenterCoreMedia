@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center Core Media | Medical Spa Advertising Agency</title>
+    <meta name="description" content="Center Core Media specializes in high-performance advertising for medical spas. Expert ad management that drives real results for your practice.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(15, 23, 42, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            animation: logoShine 2s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0% { box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4); }
+            100% { box-shadow: 0 12px 35px rgba(245, 158, 11, 0.6); }
+        }
+
+        @keyframes logoShine {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            50% { transform: rotate(45deg) translateX(100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #f59e0b;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            color: #64748b;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #0f172a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image svg {
+            width: 300px;
+            height: 300px;
+            filter: drop-shadow(0 4px 20px rgba(30, 58, 138, 0.2));
+        }
+
+        /* Ad Platforms Section */
+        .platforms {
+            background: #fff;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .platform-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .platform-card:hover::before {
+            left: 100%;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            border-color: #f59e0b;
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .platform-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .platform-card p {
+            color: #64748b;
+        }
+
+        /* Features Grid */
+        .features {
+            background: #f8fafc;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-icon {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+            min-width: 24px;
+        }
+
+        .feature-content h4 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            color: #64748b;
+        }
+
+        /* Results Section */
+        .results {
+            background: #fff;
+            text-align: center;
+        }
+
+        .results-highlight {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0f172a;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #fef3c7;
+        }
+
+        .cta-large {
+            background: #0f172a;
+            color: #f59e0b;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image svg {
+                width: 200px;
+                height: 200px;
+            }
+
+            .results-highlight {
+                font-size: 2.5rem;
+            }
+
+            .company-name {
+                font-size: 1.4rem;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <nav class="container">
+        <a href="#" class="logo-container">
+            <div class="logo">⚡CC⚡</div>
+            <div class="company-name">Center Core Media</div>
+        </a>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#platforms">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Medical Spa Advertising Experts</h1>
+            <h2>High-Performance Ad Campaigns That Drive Real Results</h2>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Start Your Campaign</a>
+                <a href="#platforms" class="cta-button" style="background: transparent; border: 2px solid #fff; color: #fff;">View Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">Professional Ad Management for Medical Spas</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Center Core Media</h3>
+                <p>We specialize in creating and managing high-performance advertising campaigns specifically for medical spas. Our focus is on driving qualified leads and maximizing your return on ad spend.</p>
+                <p>Our team manages your advertising across all major platforms, optimizing campaigns for maximum patient acquisition while you focus on running your practice.</p>
+                <p>From campaign setup to ongoing optimization, we handle every aspect of your advertising so you can see consistent, measurable growth.</p>
+                <a href="#contact" class="cta-button">Start Advertising</a>
+            </div>
+            <div class="about-image">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="100" y="150" width="200" height="120" rx="15" fill="none" stroke="url(#blueGradient)" stroke-width="3"/>
+                    <circle cx="150" cy="200" r="15" fill="#10b981"/>
+                    <circle cx="200" cy="200" r="15" fill="#10b981"/>
+                    <circle cx="250" cy="200" r="15" fill="#10b981"/>
+                    <path d="M 50 320 L 200 100 L 350 320" stroke="url(#blueGradient)" stroke-width="4" fill="none"/>
+                    <circle cx="50" cy="320" r="8" fill="#10b981"/>
+                    <circle cx="200" cy="100" r="8" fill="#10b981"/>
+                    <circle cx="350" cy="320" r="8" fill="#10b981"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ad Platforms Section -->
+<section id="platforms" class="platforms">
+    <div class="container">
+        <h2 class="section-title">Professional Ad Management</h2>
+        <p class="section-subtitle">Expert campaign management across major advertising platforms to maximize your reach and results.</p>
+        <div class="platforms-grid">
+            <div class="platform-card">
+                <div class="platform-icon">🎯</div>
+                <h3>Targeted Campaigns</h3>
+                <p>Precision-targeted advertising campaigns designed to reach patients actively seeking aesthetic treatments.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">📊</div>
+                <h3>Performance Optimization</h3>
+                <p>Continuous campaign optimization and A/B testing to maximize your return on advertising investment.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">📱</div>
+                <h3>Multi-Platform Management</h3>
+                <p>Strategic advertising across the most effective platforms for medical spa patient acquisition.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">📈</div>
+                <h3>Results-Driven Approach</h3>
+                <p>Data-driven strategies focused on generating qualified leads and maximizing patient bookings.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Choose Our Ad Management</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Medical Spa Specialists</h4>
+                    <p>Exclusive focus on medical spa advertising with deep understanding of the aesthetic industry</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Campaign Optimization</h4>
+                    <p>Continuous monitoring and optimization to maximize your return on ad spend</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Targeted Advertising</h4>
+                    <p>Precise targeting to reach qualified prospects most likely to book appointments</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Performance Tracking</h4>
+                    <p>Detailed reporting and analytics to track campaign performance and ROI</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Creative Development</h4>
+                    <p>Professional ad creative design that converts viewers into patients</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Full Management</h4>
+                    <p>Complete hands-off advertising management so you can focus on your practice</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="results">
+    <div class="container">
+        <h2 class="section-title">Proven Results</h2>
+        <p class="section-subtitle">Our advertising expertise has consistently delivered exceptional outcomes for our clients.</p>
+        <div class="results-highlight">8+ Figures Generated</div>
+        <p style="font-size: 1.2rem; color: #64748b;">Through strategic advertising campaigns and expert optimization</p>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Scale Your Practice?</h2>
+        <p>Let us handle your advertising while you focus on what you do best - treating patients.</p>
+        <a href="#contact" class="cta-large">Start Your Ad Campaign</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Center Core Media</h3>
+                <p>Professional advertising management for medical spas. We create and optimize high-performance ad campaigns that drive real results for your practice.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="#platforms">Targeted Campaigns</a></p>
+                <p><a href="#platforms">Performance Optimization</a></p>
+                <p><a href="#platforms">Multi-Platform Management</a></p>
+                <p><a href="#platforms">Results-Driven Approach</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><strong>Saad Elgharbaoui</strong></p>
+                <p>Email: <a href="mailto:saad@centercoremedia.com">saad@centercoremedia.com</a></p>
+                <p>Phone: <a href="tel:708-717-1574">(708) 717-1574</a></p>
+                <p>Get started with professional ad management today</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Center Core Media. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMobileMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            // Close mobile menu if open
+            document.getElementById('navMenu').classList.remove('active');
+        });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(15, 23, 42, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)';
+            header.style.backdropFilter = 'none';
+        }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.platform-card, .feature-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Add loading animation to results highlight
+    window.addEventListener('load', function() {
+        const resultsHighlight = document.querySelector('.results-highlight');
+        if (resultsHighlight) {
+            resultsHighlight.style.opacity = '0';
+            resultsHighlight.style.transform = 'translateY(30px)';
+
+            const resultsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.transition = 'opacity 1s ease, transform 1s ease';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 200);
+                    }
+                });
+            });
+
+            resultsObserver.observe(resultsHighlight);
+        }
+    });
+</script>
+</body>
+</html>
